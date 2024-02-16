@@ -1,0 +1,20 @@
+﻿@model Comic
+
+<div class="container">
+    <h1> ¿Quieres eliminar @Model.Nombre?</h1>
+    <br />
+    <a class="btn btn-outline-dark" asp-controller="Comics" asp-action="Index">Home</a>
+
+    <form method="post">
+        <label class="form-label">IdComic</label>
+        <input class="form-control" type="number" readonly name="IdComic" value="@Model.IdComic" />
+        <label class="form-label">Nombre</label>
+        <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" />
+        <label class="form-label">Imagen</label>
+        <input class="form-control" type="text" name="Imagen" value="@Model.Imagen" />
+        <label class="form-label">Descripción</label>
+        <input class="form-control" type="text" name="Descripcion" value="@Model.Descripcion" />
+
+        <button class="btn btn-outline-danger">Eliminar</button>
+    </form>
+</div>

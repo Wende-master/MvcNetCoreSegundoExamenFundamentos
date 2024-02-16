@@ -1,0 +1,50 @@
+﻿@model List<Comic>
+
+    <div class="container">
+        <h1>Listado de Comics</h1>
+
+        <a class="btn btn-outline-primary" asp-controller="Comics" asp-action="Create">Create Normal</a>
+    <a class="btn btn-outline-primary" asp-controller="Comics" asp-action="CreateWithProcedure">Create Procedure</a>
+    <a class="btn btn-outline-primary" asp-controller="Comics" asp-action="FindComicByName">Buscar</a>
+
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Descripción</th>
+                    <th>Detalles</th>
+                    <th>Eliminar</th>
+                    <th>Eliminar Form</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach(Comic comic in Model)
+            {
+                <tr>
+                    <td>@comic.Nombre</td>
+                    <td>
+                        <img src="@comic.Imagen" width="300" height="300" />
+                    </td>
+                    <td>@comic.Descripcion</td>
+                    <td>
+                        <a class="btn btn-outline-warning" asp-controller="Comics" 
+                        asp-route-idcomic="@comic.IdComic" asp-action="Details">Detalles</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-route-idcomic="@comic.IdComic" asp-controller="Comics" asp-action="Delete">
+                            Eliminar
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-route-idcomic="@comic.IdComic" asp-controller="Comics" asp-action="DeleteForm">
+                            Eliminar Form
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </table>
+
+    </div>
+

@@ -1,0 +1,19 @@
+﻿
+<div class="container">
+    <h1>New Comic</h1>
+    <br />
+    <a class="btn btn-outline-dark" asp-controller="Comics" asp-action="Index">Home</a>
+
+    <form method="post">
+        @* <label class="form-label">IdComic</label>
+        <input class="form-control" type="number" name="IdComic" placeholder="IdComic"/> *@
+        <label class="form-label">Nombre</label>
+        <input class="form-control" type="text" name="Nombre" placeholder="Nombre" />
+        <label class="form-label">Imagen</label>
+        <input class="form-control" type="text" name="Imagen" placeholder="Imagen" />
+        <label class="form-label">Descripción</label>
+        <input class="form-control" type="text" name="Descripcion" placeholder="Descripción" />
+
+        <button class="btn btn-outline-success">Guardar</button>
+    </form>
+</div>

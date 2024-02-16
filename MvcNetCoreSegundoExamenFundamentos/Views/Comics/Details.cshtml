@@ -1,0 +1,21 @@
+﻿@model Comic
+
+<div class="container">
+    <h1>Detalles de @Model.Nombre</h1>
+    <br />
+    <a class="btn btn-outline-dark" asp-controller="Comics" asp-action="Index">Home</a>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h2>@Model.Nombre</h2>
+        </div>
+        <div class="card-body">
+            <h3>@Model.IdComic</h3>
+            <br />
+            <img class="img-thumbnail" src="@Model.Imagen" width="300" height="300" />
+        </div>
+        <div class="card-footer">
+            <h3>@Model.Descripcion</h3>
+        </div>
+    </div>
+</div>
